@@ -39,7 +39,17 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
     environment.systemPackages = with pkgs; [
-      wget vim firefox emacs curl git
+      wget
+      vim
+      firefox
+      emacs
+      curl
+      git
+      jetbrains.idea-community
+      jetbrains.pycharm-community
+      ghc
+      stack
+      haskellPackages.hakyll
     ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -83,6 +93,22 @@
   # Enable the gdm Display Manager and disable Wayland support
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.displayManager.gdm.wayland = false;
+
+  # Configure input methods for Japanese
+    i18n.inputMethod = {
+      enabled = "ibus";
+      ibus.engines = with pkgs.ibus-engines; [ anthy mozc ];
+    };
+
+  # Configure fonts
+    fonts.fonts = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      source-code-pro
+  #   ipafont    
+  #   ipaexfont 
+  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # users.users.guest = {

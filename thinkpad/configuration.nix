@@ -34,24 +34,55 @@
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
 
+
+  # Enable unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    aspell
+    aspellDicts.en
+    adapta-backgrounds
+    adapta-gtk-theme
+    bash
     bash-completion
     curl
     emacs
     firefox
-    git
+    gcolor3
+    google-chrome
+    gimp
+    gitAndTools.gitFull
+    gitAndTools.hub
     haskellPackages.hakyll
-    wget
+    htop
     jetbrains.idea-community
     jetbrains.pycharm-community
+    libreoffice
+    manpages
+    maia-icon-theme
+    nix-bash-completions
+    papirus-icon-theme
+    skype
+    slack
+    spotify
     stack
+    tmux
+    unzip
     vim
+    wget
+    wine
+    winetricks
+    zlib
   ];
+
+  # Tweak fonts
+  fonts.fontconfig.ultimate.enable = true;
 
   # Add fonts
   fonts.fonts = with pkgs; [
+    roboto
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
@@ -90,7 +121,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.layout = "jp";
-  # services.xserver.xkbOptions = "eurosign:e";
+  services.xserver.xkbOptions = "terminate:ctrl_alt_bksp, ctrl:nocaps";
 
   # Enable touchpad support.
   services.xserver.libinput.enable = true;

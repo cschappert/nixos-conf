@@ -48,6 +48,8 @@
     bash
     bash-completion
     curl
+    docker
+    docker_compose
     emacs
     firefox
     gcolor3
@@ -64,6 +66,8 @@
     maia-icon-theme
     nix-bash-completions
     papirus-icon-theme
+    sbt
+    scala
     skype
     slack
     spotify
@@ -108,6 +112,10 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
+
+  # Enable docker
+  virtualisation.docker.enable = true;
+
   # Configure input methods for Japanese
   i18n.inputMethod = {
     enabled = "ibus";
@@ -148,7 +156,7 @@
     isNormalUser = true;
     home = "/home/chris";
     description = "Chris Schappert";
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "docker" ];
     uid = 1000;
   };
 

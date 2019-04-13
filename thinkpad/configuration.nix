@@ -45,6 +45,7 @@
     aspellDicts.en
     adapta-backgrounds
     adapta-gtk-theme
+    atom
     bash
     bash-completion
     curl
@@ -65,6 +66,9 @@
     manpages
     maia-icon-theme
     nix-bash-completions
+    nodejs
+    nodePackages.node2nix
+    nodePackages.node-gyp
     papirus-icon-theme
     sbt
     scala
@@ -78,6 +82,7 @@
     wget
     wine
     winetricks
+    xclip
     zlib
   ];
 

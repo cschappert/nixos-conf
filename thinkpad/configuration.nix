@@ -79,6 +79,7 @@
     tmux
     unzip
     vim
+    vscode
     wget
     wine
     winetricks
